@@ -36,5 +36,11 @@ BEGIN
 END//
 DELIMITER ;
 
-
-
+-- Selecciona todos los atributos de los proveedores DDL
+DELIMITER //
+CREATE PROCEDURE procShowCategoryDDL()
+BEGIN
+	select cat_id, cat_nombre
+    from tbl_proveedor;
+END//
+DELIMITER ;
