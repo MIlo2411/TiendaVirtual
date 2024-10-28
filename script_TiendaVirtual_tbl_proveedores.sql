@@ -40,6 +40,13 @@ BEGIN
 END//
 DELIMITER ;
 
-
+-- Selecciona unicamente el id y el nombre de los provedores
+DELIMITER //
+CREATE PROCEDURE procShowSuppliersDDL()
+BEGIN
+	select prov_id,concat(prov_telefono,' ',prov_nombre) as Nombre
+    from tbl_proveedores;
+END//
+DELIMITER ;
 
 
