@@ -37,7 +37,14 @@ BEGIN
 END//
 DELIMITER ;
 
-
+-- Selecciona todos los atributos detalles pedidos DDL
+DELIMITER //
+CREATE PROCEDURE procShowDetallesPedidoDDL()
+BEGIN
+	select det_id, det_cantidad, det_precio
+    from tbl_detalles_pedido;
+END//
+DELIMITER ;
 
 
 
