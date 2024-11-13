@@ -1,15 +1,19 @@
 USE  TiendaVirtual;
 -- Insertar
 DELIMITER //
-CREATE PROCEDURE procInsertClient(IN v_nombre VARCHAR(45),
- IN v_apellido VARCHAR(45), IN v_correo TEXT, 
- IN v_contrasena TEXT, IN v_direccion TEXT, IN v_telefono INT, IN v_fecha TEXT)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `procInsertClient`(
+    IN v_nombre VARCHAR(45),
+    IN v_apellido VARCHAR(45),
+    IN v_correo TEXT,
+    IN v_contrasena TEXT,
+    IN v_direccion TEXT,
+    IN v_telefono INT
+    
+)
 BEGIN
-    INSERT INTO tbl_clientes (cli_nombre, cli_apellido,
-    cli_correo, cli_contrasena, cli_direccion_envio, cli_telefono,
-    cli_fecha_registro)
-    VALUES (v_nombre, v_apellido, v_correo, v_contrasena, v_direccion, v_telefono, v_fecha);
-END//
+    INSERT INTO tbl_clientes (cli_nombre, cli_apellido, cli_correo, cli_contrasena, cli_direccion_envio, cli_telefono)
+    VALUES (v_nombre, v_apellido, v_correo, v_contrasena, v_direccion, v_telefono);
+END
 DELIMITER ;
 
 -- ACTUALIZAR
